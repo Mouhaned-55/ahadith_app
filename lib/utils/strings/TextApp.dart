@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 
 abstract class TextApp {
   static Text splashScreen = const Text(
-    "ألاربعون النوويه",
+    "تطبيق أحاديث",
     style: TextStyle(
-        color: Colors.white, fontWeight: FontWeight.bold, fontSize: 36),
+        color: Colors.white, fontWeight: FontWeight.bold, fontSize: 36,fontFamily: "Tajawal"),
   );
 
   static Text topHomeScreen = const Text(
-    "ألاربعون النوويه",
+    "تطبيق أحاديث",
     textDirection: TextDirection.rtl,
     style: TextStyle(
-        color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30),
+        color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16,fontFamily: "Tajawal"),
   );
   static Text headerHomeScreen = const Text(
-    "لحفظ وسماع الاحاديث النوويه",
+    "لحفظ وسماع الاحاديث النبوية",
     style: TextStyle(
-        color: Colors.green, fontWeight: FontWeight.bold, fontSize: 30),
+        color: Colors.green, fontWeight: FontWeight.bold, fontSize: 24,fontFamily: "Tajawal"),
   );
 
-  static Text bookOneScreen = const Text("ألأحاديث الاربعون");
-  static Text bookTwoScreen = const Text("ألأستماع للأحاديث");
-  static Text bookThreeScreen = const Text("ألأحاديث المحفوظه");
+  static Text bookOneScreen = const Text("ألأحاديث النبوية",style: TextStyle(fontFamily: "Tajawal",color: Colors.white,fontWeight: FontWeight.bold));
+  static Text bookTwoScreen = const Text("ألأستماع للأحاديث",style: TextStyle(fontFamily: "Tajawal",color: Colors.white,fontWeight: FontWeight.bold));
+  static Text bookThreeScreen = const Text("ألأحاديث المحفوظه",style: TextStyle(fontFamily: "Tajawal",color: Colors.white,fontWeight: FontWeight.bold));
 }

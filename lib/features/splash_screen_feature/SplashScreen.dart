@@ -1,39 +1,39 @@
 import 'dart:async';
 
+import 'package:ahadith_app/utils/strings/TextApp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../utils/colors/colors.dart';
 import '../home_page_feature/HomePage.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
-
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
   void initState() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
-
-    Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => HomePage())); //TODO ADD HOME SCREEN
+    Timer(Duration(seconds: 10), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
     });
+       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.lightGreenColor,
+      backgroundColor: AppColors.primary,
       body: Stack(
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(
-            "assets/images/svg/splash.svg",
+            "assets/svg/splash.svg",
             height: double.infinity,
             width: double.infinity,
             fit: BoxFit.fitHeight,
@@ -43,9 +43,13 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(
-                  "assets/images/splash_screen_logo.svg",
-                  fit: BoxFit.fitHeight,
+                  ("assets/svg/logo.svg"),
+                  height: 190.h,
+                  width: 190.w,
+           //       fit: BoxFit.fitHeight,
                 ),
+                SizedBox(height: 20.h),
+                TextApp.splashScreen
               ],
             ),
           )

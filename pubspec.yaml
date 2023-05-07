@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.5
   flutter_screenutil: ^5.7.0
+  share: ^2.0.0-nullsafety.0
+  mime: ^1.0.1-nullsafety.0
 
 dev_dependencies:
   flutter_test:
@@ -55,16 +57,22 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+
   uses-material-design: true
+  fonts:
+    - family: Tajawal
+      fonts:
+        - asset: assets/fonts/Tajawal-Medium.ttf
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/images/splash_screen_logo.svg
-     - assets/images/splash_screen_background.svg
-     - assets/images/svg/splash.svg
+    - assets/
+    - assets/svg/
+    - assets/audio/
+     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
