@@ -1,13 +1,10 @@
-import 'package:ahadith_app/features/ahadith_feature/audio_ahadith_screen.dart';
 import 'package:ahadith_app/features/showing_data_feature/data_page.dart';
 import 'package:ahadith_app/local_audio/local_audio.dart';
 import 'package:ahadith_app/utils/colors/colors.dart';
-
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
 import '../../model/hadith.dart';
-
 
 class HomeHadith extends StatefulWidget {
   final Hadith hadith;
@@ -43,7 +40,7 @@ class HomeHadithState extends State<HomeHadith> {
     });
   }
 
-  Widget getWedjet(bool bol) {
+  Widget getWidget(bool bol) {
     if (bol) {
       return DataPage(
         hadith: widget.hadith,
@@ -61,7 +58,7 @@ class HomeHadithState extends State<HomeHadith> {
     return Scaffold(
         body: Stack(
           children: <Widget>[
-            getWedjet(bol),
+            getWidget(bol),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -81,7 +78,8 @@ class HomeHadithState extends State<HomeHadith> {
           ),
           elevation: 4.0,
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.miniCenterDocked,
         bottomNavigationBar: BottomAppBar(
           // ignore: sort_child_properties_last
           child: Container(
@@ -101,9 +99,8 @@ class HomeHadithState extends State<HomeHadith> {
                   icon: Icon(
                     Icons.book,
                     //darken the icon if it is selected or else give it a different color
-                    color: selectedIndex == 0
-                        ? AppColors.yellow1
-                        : Colors.white,
+                    color:
+                        selectedIndex == 0 ? AppColors.yellow1 : Colors.white,
                   ),
                 ),
                 IconButton(
@@ -114,9 +111,8 @@ class HomeHadithState extends State<HomeHadith> {
                   iconSize: 27.0,
                   icon: Icon(
                     Icons.library_books,
-                    color: selectedIndex == 1
-                        ? AppColors.yellow1
-                        : Colors.white,
+                    color:
+                        selectedIndex == 1 ? AppColors.yellow1 : Colors.white,
                   ),
                 ),
                 //to leave space in between the bottom app bar items and below the FAB
@@ -131,9 +127,8 @@ class HomeHadithState extends State<HomeHadith> {
                   iconSize: 27.0,
                   icon: Icon(
                     Icons.collections_bookmark,
-                    color: selectedIndex == 2
-                        ? AppColors.yellow1
-                        : Colors.white,
+                    color:
+                        selectedIndex == 2 ? AppColors.yellow1 : Colors.white,
                   ),
                 ),
                 IconButton(
@@ -145,9 +140,8 @@ class HomeHadithState extends State<HomeHadith> {
                   iconSize: 27.0,
                   icon: Icon(
                     Icons.volume_up,
-                    color: selectedIndex == 3
-                        ? AppColors.yellow1
-                        : Colors.white,
+                    color:
+                        selectedIndex == 3 ? AppColors.yellow1 : Colors.white,
                   ),
                 ),
               ],

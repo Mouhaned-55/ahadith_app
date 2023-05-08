@@ -1,8 +1,5 @@
-import 'package:ahadith_app/features/home_page_feature/HomePage.dart';
 import 'package:ahadith_app/features/single_hadith_feature/home_hadith.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

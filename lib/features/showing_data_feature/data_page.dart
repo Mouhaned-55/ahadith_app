@@ -15,7 +15,7 @@ class DataPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        slivers: [ShowingDataContent(hadith: data)],
+        slivers: [ShowingDataContent(hadith: data, ahadith: hadith,)],
       ),
     );
   }

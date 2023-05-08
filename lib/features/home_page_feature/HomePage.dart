@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../utils/colors/colors.dart';
 import '../../utils/strings/TextApp.dart';
 import '../ahadith_feature/ahadith_screen.dart';
-import '../ahadith_feature/audio_ahadith_screen.dart';
+import '../audio_hadith_feature.dart/audio_hadith_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,9 +34,8 @@ class _HomePageState extends State<HomePage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-              
                 Container(
-                    margin: EdgeInsets.only(right: 20.w,top: 10.h),
+                    margin: EdgeInsets.only(right: 20.w, top: 10.h),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -61,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (ctx) => AudioAhadithScreen()));
+                          builder: (ctx) =>  AudioAhadithScreen()));
                     },
                     child: myCard(
                         AppColors.yellow1,
