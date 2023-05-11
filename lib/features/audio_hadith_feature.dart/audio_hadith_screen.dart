@@ -122,7 +122,7 @@ class _AudioAhadithScreenState extends State<AudioAhadithScreen> {
                                       builder: (context) => LocalAudio(
                                           hadith: item,
                                           localAudioPath:
-                                              'audio/' + item.audioHadith)));
+                                              'assets/audio/' + item.audioHadith)));
                                 },
                                 child: ayah(item.key, item.nameHadith));
                           },

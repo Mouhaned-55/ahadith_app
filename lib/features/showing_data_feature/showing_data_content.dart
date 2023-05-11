@@ -17,6 +17,14 @@ class ShowingDataContent extends StatefulWidget {
 }
 
 class _ShowingDataContentState extends State<ShowingDataContent> {
+  late bool fav;
+
+  @override
+  void initState() {
+    super.initState();
+    fav = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -31,7 +39,8 @@ class _ShowingDataContentState extends State<ShowingDataContent> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   GestureDetector(
-                    onTap: () => Navigator.pop(context),
+                    onTap: () =>
+                        Navigator.pop(context, fav != widget.ahadith.fav),
                     child: const Icon(
                       Icons.arrow_back_ios,
                       color: Colors.black,
@@ -39,14 +48,26 @@ class _ShowingDataContentState extends State<ShowingDataContent> {
                   ),
                   SvgPicture.asset("assets/svg/logo.svg"),
                   GestureDetector(
-                    onTap: () => Navigator.pop(context),
+                    onTap: () {
+                      setState(() {
+                        fav = !fav;
+                        // widget.ahadith.fav = fav;
+                      });
+                    },
                     child: Container(
+                      margin: EdgeInsets.only(bottom: 20.h),
                       width: 27.w,
                       height: 27.w,
-                      child: const Icon(
-                        Icons.favorite,
-                        color: Colors.red,
-                      ),
+                      child: fav
+                          ? const Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                              size: 40,
+                            )
+                          : const Icon(
+                              Icons.favorite_border,
+                              size: 40,
+                            ),
                     ),
                   ),
                 ],
@@ -113,7 +134,7 @@ Padding _convertHadith(BuildContext context, String text) {
   });
 
   return Padding(
-    padding:  EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 15.w),
     child: RichText(
       textAlign: TextAlign.right,
       text: TextSpan(

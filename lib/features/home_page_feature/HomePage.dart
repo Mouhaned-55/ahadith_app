@@ -6,6 +6,7 @@ import '../../utils/colors/colors.dart';
 import '../../utils/strings/TextApp.dart';
 import '../ahadith_feature/ahadith_screen.dart';
 import '../audio_hadith_feature.dart/audio_hadith_screen.dart';
+import '../favorites_feature/favorites_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (ctx) =>  AudioAhadithScreen()));
+                          builder: (ctx) => AudioAhadithScreen()));
                     },
                     child: myCard(
                         AppColors.yellow1,
@@ -68,8 +69,18 @@ class _HomePageState extends State<HomePage> {
                         "الاستماع للاحاديث",
                         "assets/play.png",
                         'assets/svg/twoo.svg')),
-                myCard(AppColors.red1, AppColors.red2, "الاحاديث المحفوظه",
-                    "assets/save-instagram.png", "assets/svg/three.svg")
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => FavortiesScreen()));
+                  },
+                  child: myCard(
+                      AppColors.red1,
+                      AppColors.red2,
+                      "الأحاديث المحفوظة",
+                      "assets/save-instagram.png",
+                      "assets/svg/three.svg"),
+                )
               ],
             ),
           ],
